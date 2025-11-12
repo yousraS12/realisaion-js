@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Bibliotique</title>
+  <link rel="stylesheet" href="style.css">
+  
+  
+</head>
+<body>
+    <header div="">
+    <h1>🌸Bibliothèque des filles 🌸</h1>
+    
+  </header>
+ 
+  <form id="form-ajout">
+    <Fieldset>
+  <label for="code">code :</label>
+  <input type="number" id="code" name="code" required>
+
+  <label for="titre">titre de livre :</label>
+  <input type="text" id="titre" name="titre" required>
+
+  <label for="auteur"> l'auteur :</label>
+  <input type="text" id="auteur" name="auteur" required>
+
+  <label for="année"> l'année : </label>
+  <input type="number" id="année" name="année" required>
+
+  <label for="prix"> prix (DH): </label>
+  <input type="number" id="prix" name="prix" required>
+
+  <label for=""></label>
+
+  <label for="disponible"> Disponible : </label>
+  <select name="disponible" id="disponible">
+    <option value="true"> Oui</option>
+    <option value="false"> Non</option>
+  </select>
+   <button type="submit">Ajouter</button>
+  </Fieldset>
+
+  </form>
+  
+  <footer>
+    <p>🌸Total des livres : <span id="total-livre">0</span></p>
+    <p>🌸Livres disponible : <span id="livres-disponible">0</span> </p>
+  </footer>
+  <Script src="script.js"></Script>
+
+</body>

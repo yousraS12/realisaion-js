@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Bibliotique</title>
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+  <header>
+    <h1>🌸Bibliothèque des filles🌸</h1>
+    <a href="ajouter.html" class="ajouter-btn"> Ajouter un livre</a>
+
+    
+  </header>
+  
+  <input type="text" id="recherche" placeholder="🔍 Rechercher un livre..." oninput="filtrerLivres()">
+
+  <div id="liste-livres" class="livres-container"></div>
+
+  <footer>
+  <p>🌸 Total des livres : <span id="total-livre">0</span></p>
+  <p>🌸 Livres disponibles : <span id="livres-disponible">0</span></p>
+</footer>
+
+
+  <script src="script.js"></script>
+  
+
+
+  
+</body>
+
+</html>

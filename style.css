@@ -1,0 +1,192 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  color: #333;
+}
+body {
+  background-image: url("images/image.header.jpg"); /* <-- بدلي bg.jpg بالصورة ديالك */
+  background-size: cover;         /* تخلي الصورة تغطي الصفحة كاملة */
+  background-position: center;    /* تكون في الوسط */
+  background-attachment: fixed;   /* تبقى ثابتة أثناء التمرير */
+}
+.page-container {
+   background-color: rgba(255, 255, 255, 0.8);/* اللون الأبيض الشفاف */
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+       background: rgba(255, 255, 255, 0.342)
+    
+}
+header h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  color: #b30059;
+
+  padding: 10px 20px;
+  border-radius: 12px;
+  
+  
+}
+a{
+    text-decoration: none;
+    border-radius: 20px;
+    background-color: aliceblue;
+
+    
+}
+.ajouter-btn {
+    padding: 9px 15px;
+    background-color: #b30059;
+    color: white;
+   margin-right: 20px;
+   
+}
+.recherche{
+    padding: 9px 15px;
+    margin-left: 50px;
+}
+
+
+/* main */
+main {
+  width: 90%;
+  max-width: 1000px;
+  flex-grow: 1;
+  margin-top: 40px;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* footer */
+footer {
+
+  background: rgba(255, 255, 255, 0.342);
+  padding: 10px 20px;
+  border-radius: 12px;
+  margin-top: 20px;
+  text-align: center;
+  color: white;
+}
+form {
+
+            background: rgba(255, 255, 255, 0.342);
+            backdrop-filter: blur(5px);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        input, button {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+            border-radius: 10px;
+            outline: none;
+            border: rgb(191, 189, 189) 1px solid;
+        }
+        button {
+            background: #b30059;;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        
+.livres-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* flexible: up to 3+ cols depending on viewport */
+  gap: 25px;                              /* المسافة بين الكروت */
+  width: 90%;
+  max-width: 1100px;
+  margin: 40px auto;
+  justify-items: center; /* center cards */
+}
+
+/* 🌸 الكارت */
+.carte {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  padding: 12px;
+  width: 80%;
+  max-width: 250px; /* حجم الكارت (حد أقصى) */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.carte:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* الصورة */
+.carte img {
+  width: 80%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* العنوان */
+.carte h2 {
+  font-size: 16px;
+  color: #b30059;
+  margin: 6px 0;
+}
+
+/* التفاصيل */
+.carte p {
+  font-size: 13px;
+  color: #444;
+  margin: 3px 0;
+}
+
+.carte .prix {
+  font-weight: bold;
+  color: #b30059;
+}
+
+.carte .disponible {
+  font-size: 12px;
+  color: #1c1d1c;
+}
+
+/* الزر */
+.carte button {
+  background-color: #b30059;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  margin-top: 8px;
+}
+
+.carte button:hover {
+  background-color: #80767b;
+}
+
+/* 🌷 Responsive (باش يتنظم مزيان فالتليفون) */
+@media (max-width: 900px) {
+  .livres-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .livres-container {
+    grid-template-columns: 1fr;
+  }
+}
