@@ -15,6 +15,8 @@ const livresLS = JSON.parse(localStorage.getItem('livres')) || [];
 
 // 3️⃣ fusionner les deux tableaux
 let livres = [...livresInitiaux, ...livresLS];
+// ajout : initialiser l'ordre de tri
+let triAsc = true;
 
 // 🔹 Afficher les livres
 function showBooks(filterBooks = livres) {
@@ -31,12 +33,23 @@ function showBooks(filterBooks = livres) {
       <p class="annee">Année: ${livre.année}</p>
       <p class="prix">Prix: ${livre.prix} DH</p>
       <p class="disponible">Disponible: ${livre.disponible ? '✅ Oui' : '❌ Non'}</p>
+      <button class="btn reserver" onclick="reserverLivre(${livre.code})" ${!livre.disponible ? 'disabled' : ''}>📚 Réserver</button>
       <button class="btn" onclick="supprimerLivre(${livre.code})">🗑️ Supprimer</button>
     `;
     container.appendChild(carte);
   });
 
   afficherStats();
+}
+// Réserver un livre
+function reserverLivre(code) {
+  const livre = livres.find(l => l.code == code);
+  if(livre && livre.disponible) {
+    livre.disponible = false;
+    localStorage.setItem('livres', JSON.stringify(livres.filter(l => l.code > 8)));
+    showBooks();
+    alert("Livre réservé avec succès !");
+  }
 }
 
 // 🔹 Supprimer un livre
@@ -48,6 +61,16 @@ function supprimerLivre(code) {
     localStorage.setItem('livres', JSON.stringify(livres.filter(l => l.code > 8))); // ne garder que les livres ajoutés par l'utilisateur
     showBooks();
   }
+}
+// Trier les livres par titre
+function trierLivres() {
+  livres.sort((a, b) => {
+    if(a.titre < b.titre) return triAsc ? -1 : 1;
+    if(a.titre > b.titre) return triAsc ? 1 : -1;
+    return 0;
+  });
+  triAsc = !triAsc; // inverser le tri
+  showBooks();
 }
 
 // 🔹 Statistiques
